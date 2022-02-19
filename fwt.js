@@ -6,9 +6,12 @@ let fire = "fire";
 let water = "water";
 let tree = "tree";
 let computerSelection;
-let playerSelection = "fire";
+// let playerSelection = prompt("Enter Fire, Water, or Tree: ").toLocaleLowerCase();
 let playerScore = 0;
 let computerScore = 0;
+
+//Consider buttons for selections fire, water, tree
+//Design with image logos for choices. Bcground image
 
 function computerPlay() {
    let compChoice = Math.floor(Math.random()*3);
@@ -24,11 +27,14 @@ return computerSelection;
 }
 
 computerPlay();
-console.log("Computer selects:", computerSelection);
 
 // Single round of game , player vs computer
+//declare winner of round
 
 function playRound(playerSelection, computerSelection) {
+    
+    console.log("Computer selects:", computerSelection);
+
     if (playerSelection == fire && computerSelection == water){
         computerScore += 1;
         return "You Lose! Water washes Fire";
@@ -48,21 +54,25 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-//declare winner of round
-  console.log(playRound(playerSelection, computerSelection));
-
 //for loop to play 5 rounds of game
 
 function game(){
-    for (let i = 0; i <= 5; i++){
+
+    for (let i = 0; i < 5; i++){
+        computerPlay;
+     let playerSelection = prompt("Enter Fire, Water, or Tree: ").toLocaleLowerCase();
+
         playRound(playerSelection, computerSelection);
-    if (i = 5){
-        if (computerScore < playerScore){
-            return "You Lose the game";
-        } else {
-            return "You Won the game";
-        }
+        console.log(playRound(playerSelection, computerSelection));
     }
+    if (i = 4){
+        if (computerScore > playerScore){
+            return "Computer Wins, You Lose!";
+        } else if (computerScore = playerScore) {
+            return "The Game is a Draw";
+        } else {
+            return "You Won! Computer Loses!";
+        }
     }
 }
  
