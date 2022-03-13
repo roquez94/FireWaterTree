@@ -1,11 +1,11 @@
-//Console Game of Fire-Water-Tree
-//Variation of Rock,paper, scissors
+//Console Game of Fire-Water-Tree -- Variation of Rock,paper, scissors
 
 // Play against computer, randomly returns fire, water, tree
 let fire = "fire";
 let water = "water";
 let tree = "tree";
 let computerSelection;
+let playerSelection;
 // let playerSelection = prompt("Enter Fire, Water, or Tree: ").toLocaleLowerCase();
 let playerScore = 0;
 let computerScore = 0;
@@ -32,48 +32,56 @@ computerPlay();
 //declare winner of round
 
 function playRound(playerSelection, computerSelection) {
-    
+    computerPlay();
     console.log("Computer selects:", computerSelection);
 
     if (playerSelection == fire && computerSelection == water){
         computerScore += 1;
-        return "You Lose! Water washes Fire";
+        console.log ("You Lose! Water washes Fire");
     } else if (playerSelection == water && computerSelection == tree) {
         computerScore += 1;
-        return "You Lose! Trees absorbs Water";
+        console.log ("You Lose! Trees absorbs Water");
     } else if (playerSelection == tree && computerSelection == fire){
         computerScore += 1;
-        return "You Lose! Fire burns Trees ";
+        console.log ("You Lose! Fire burns Trees ");
     } else if (playerSelection == computerSelection){
         computerScore += 1;
         playerScore +=1;
-        return "It's a draw";
+        console.log ("It's a draw");
     } else {
         playerScore +=1;
-        return "You win this round!";
+        console.log ("You win this round!");
     }
   }
+//play round when button is pressed
+
+document.getElementById('fire').addEventListener("click",()=> {playRound(fire, computerSelection)}); 
+document.getElementById('water').addEventListener("click",()=> {playRound(water, computerSelection)}); 
+document.getElementById('tree').addEventListener("click",()=> {playRound(tree, computerSelection)}); 
+
+
+
 
 //for loop to play 5 rounds of game
 
-function game(){
+//function game(){
 
-    for (let i = 0; i < 5; i++){
-        computerPlay;
-     let playerSelection = prompt("Enter Fire, Water, or Tree: ").toLocaleLowerCase();
+  //  for (let i = 0; i < 5; i++){
+  //      computerPlay;
+ //    let playerSelection = prompt("Enter Fire, Water, or Tree: ").toLocaleLowerCase();
 
-        playRound(playerSelection, computerSelection);
-        console.log(playRound(playerSelection, computerSelection));
-    }
-    if (i = 4){
-        if (computerScore > playerScore){
-            return "Computer Wins, You Lose!";
-        } else if (computerScore = playerScore) {
-            return "The Game is a Draw";
-        } else {
-            return "You Won! Computer Loses!";
-        }
-    }
-}
+ //       playRound(playerSelection, computerSelection);
+ //       console.log(playRound(playerSelection, computerSelection));
+//    }
+//    if (i = 4){
+ //       if (computerScore > playerScore){
+ //           return "Computer Wins, You Lose!";
+ //       } else if (computerScore = playerScore) {
+  //          return "The Game is a Draw";
+ //       } else {
+  //          return "You Won! Computer Loses!";
+  //      }
+  //  }
+// }
  
-console.log(game());
+// console.log(game());
