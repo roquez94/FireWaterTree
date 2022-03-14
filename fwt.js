@@ -68,14 +68,16 @@ function game(playerSelection, computerSelection){
         computerPlay;
         playRound(playerSelection, computerSelection);
      //   console.log(playRound(playerSelection, computerSelection));
-    if (i = 5){
+     if (i = 4){
         if (computerScore > playerScore){
-            document.getElementById('winner').textContent = "Computer Wins, You Lose!";
-        } else if (computerScore = playerScore) {
-            document.getElementById('winner').textContent =  "The Game is a Draw";
-        } else if(computerScore < playerScore){
-            document.getElementById('winner').textContent =  "You Won! Computer Loses!";
+            document.getElementById('winner').textContent = "Computer is Winning!";
+        } else if (computerScore == playerScore) {
+            document.getElementById('winner').textContent =  "The Game is at a Draw";
+        } else {
+            document.getElementById('winner').textContent =  "Your Winning!";
         }
+     } else {
+        document.getElementById('winner').textContent =  "Keep Playing"; 
      }
     }
  }
