@@ -8,10 +8,17 @@ body {
     margin: 0px;
 }
 
+.wrapper {
+    border-style: groove;
+    border-color:rgb(2, 110, 250);
+    background-color: rgb(209, 13, 13);
+    margin: 10px;
+}
+
 .top {
     text-align: center;
     color: white;
-    background-color: rgb(2, 110, 250);
+    background-color: rgba(2, 109, 250, 0.705);
     margin: 0px;
     padding: 0px;
 }
@@ -36,16 +43,19 @@ border-radius: 15px 15px 15px 0px;
 #water:hover {
     color: blue;
     font-size: 2em;
+    background-color: aqua;
 }
 
 #fire:hover {
     color: red;
     font-size: 2em;
+    background-color: rgb(255, 166, 65);
 }
 
 #tree:hover  {
     color: green;
     font-size: 2em;
+    background-color: rgb(201, 253, 199);
 }
 
 .score {
